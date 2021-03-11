@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-size: 10px;
+}
+
+body{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.8rem;
+
+    color: #7A7C80;
+    background: #101214;
+}
+
+h2{
+    font-size: 2.5rem;
+    font-weight: 400;
+
+    color: white;
+}
+p{
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+a{
+    text-decoration: none;
+}
+
+main{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+
+    margin-top: -28rem;
+    height: 56rem;
+    header{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 58%;
+        
+        width: 24rem;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        .header-image{
+            img{
+                width: 9rem;
+            }
+        }
+        .header-text{
+            h2{
+
+            }
+            p{
+                padding-top: 0.2rem;
+            }
+        }
+        .header-contact{
+            padding-top: 1.2rem;
+            a{
+                margin: 0.5rem;
+                svg{
+                    width: 2.1rem;
+
+                    fill: #7A7C80;
+    
+                    transition: fill 300ms;
+                    &:hover{
+                        fill: white;
+                    }
+                }
+            }
+        }
+    }
+    .content{
+        position: absolute;
+        left: 50%;
+        width: 50%;
+        section{
+            margin-bottom: 3rem;
+        }
+        .introduction{
+            p{
+                max-width: 50rem;
+            }
+        }
+        .video-showcase{
+            .video-list{
+                margin-top: 1rem;
+
+                height: 40rem;
+                width: 45rem;
+
+                overflow-y: scroll;
+                &::-webkit-scrollbar {
+                    width: 1rem;
+                    height: 1rem;
+                }
+                &::-webkit-scrollbar-thumb {
+                    background: #7A7C80;
+                    border-radius: 10px;
+                }
+                &::-webkit-scrollbar-thumb:hover{
+                    background: #666769;
+                }
+                &::-webkit-scrollbar-track{
+                    background: #2e2e2e;
+                    border-radius: 10px;
+                }
+                .list-item{
+                    padding: 1rem 0rem;
+                    &:first-child{
+                        padding-top: 0;
+                    }
+                    &:last-child{
+                        padding-bottom: 0;
+                    }
+                    iframe{
+                        border: none;
+                        border-radius: 0.25rem;
+
+                        width: 420px;
+                        height: 237px;
+                    
+                        filter: grayscale(100%);
+                    
+                        transition: filter 600ms;
+                        &:hover{
+                            filter: grayscale(0%);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media(max-width: 940px) {
+    main{
+        top: 1.4rem;
+
+        margin-top: 0rem;
+        header{
+            position: static;
+            top: 1rem;
+
+            width: auto;
+
+            padding-bottom: 1.6rem;
+            margin: 4rem 2.4rem 1.6rem;
+        }
+        .content{
+            position: absolute;
+            left: 2.4rem;
+            right: 2.4rem;
+            
+            width: auto;
+
+            margin-left: 0rem;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            .video-showcase{
+                .video-list{
+                    .list-item{
+                        iframe{
+                            filter: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 510px) {
+    main{
+        .content{
+            .video-showcase{
+                .video-list{
+                    width: 30rem;
+                    .list-item{
+                        iframe{
+                            height: 14rem;
+                            width: 25rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
